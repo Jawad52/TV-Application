@@ -1,6 +1,9 @@
 package com.jawad.androidtv.di
 
+import com.jawad.androidtv.ui.components.fragment.mediaplayer.MediaPlayerFragment
+import com.jawad.androidtv.ui.components.fragment.SplashFragment
 import dagger.Module
+import dagger.android.ContributesAndroidInjector
 
 /**
  * The class FragmentModuleBuilder
@@ -13,5 +16,8 @@ import dagger.Module
 @Suppress("unused")
 @Module
 abstract class FragmentModuleBuilder {
-
+    @ContributesAndroidInjector
+    abstract fun contributeSplashFragment(): SplashFragment
+    @ContributesAndroidInjector
+    abstract fun contributeMediaPlayerFragment(): MediaPlayerFragment
 }

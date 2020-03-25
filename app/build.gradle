@@ -34,7 +34,7 @@ android {
     flavorDimensions "default"
     productFlavors {
         production {
-            buildConfigField "String", "BASE_URL", '"http://"'
+            buildConfigField "String", "BASE_URL", '"https://devapi.dawriplus.com/"'
         }
     }
     packagingOptions {
