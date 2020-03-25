@@ -1,7 +1,7 @@
 package com.jawad.androidtv.di
 
 import androidx.lifecycle.ViewModel
-import com.jawad.androidtv.ui.components.fragment.mediaplayer.MediaPlayerViewModel
+import com.jawad.androidtv.ui.fragment.player.MediaPlayerViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

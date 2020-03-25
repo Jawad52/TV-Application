@@ -1,6 +1,6 @@
 package com.jawad.androidtv.di
 
-import com.jawad.androidtv.ui.components.MainActivity
+import com.jawad.androidtv.ui.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
