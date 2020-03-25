@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-platform-android'
+
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "com.jawad.androidtv"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "default"
+    productFlavors {
+        production {
+            buildConfigField "String", "BASE_URL", '"http://"'
+        }
+    }
+    packagingOptions {
+        pickFirst 'META-INF/kotlinx-io.kotlin_module'
+        pickFirst 'META-INF/atomicfu.kotlin_module'
+        pickFirst 'META-INF/kotlinx-coroutines-core.kotlin_module'
+        pickFirst 'META-INF/kotlinx-coroutines-io.kotlin_module'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"
+    implementation "androidx.core:core-ktx:$rootProject.kotlinxCoreVersion"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$rootProject.kotlinVersion"
+
+    implementation "androidx.leanback:leanback:$rootProject.leanbackVersion"
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    //Dagger
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerSupport"
+    implementation "com.google.dagger:dagger-android:$rootProject.androidDagger"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.androidDagger"
+    implementation "com.google.dagger:dagger:$rootProject.daggerCompiler"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerCompiler"
+    //sdp
+    implementation "com.intuit.sdp:sdp-android:$rootProject.sdpAndroid"
+    implementation "com.intuit.ssp:ssp-android:$rootProject.sdpAndroid"
+    //coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$rootProject.coroutinesVersion"
+    implementation "android.arch.lifecycle:viewmodel:$rootProject.fragmentVersion"
+    implementation "android.arch.lifecycle:extensions:$rootProject.fragmentVersion"
+    //ANKO
+    implementation "org.jetbrains.anko:anko-commons:$rootProject.ankoVersion"
+    implementation "org.jetbrains.anko:anko-design:$rootProject.ankoVersion"
+    androidExtensions {
+        experimental = true
+    }
+    //Navigation fragment
+    implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
+    //Recyclerview
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:$rootProject.rvSelectionVersion"
+    //MultiDex
+    implementation "androidx.multidex:multidex:$rootProject.multidex"
+    // Networking
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp"
+}
