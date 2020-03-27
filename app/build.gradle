@@ -71,8 +71,9 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$rootProject.coroutinesVersion"
-    implementation "android.arch.lifecycle:viewmodel:$rootProject.fragmentVersion"
-    implementation "android.arch.lifecycle:extensions:$rootProject.fragmentVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
     //ANKO
     implementation "org.jetbrains.anko:anko-commons:$rootProject.ankoVersion"
     implementation "org.jetbrains.anko:anko-design:$rootProject.ankoVersion"
@@ -95,9 +96,12 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttp"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp"
     //ExoPlayer
-    implementation "com.google.android.exoplayer:exoplayer:$ExoPlayerVersion"
-    implementation "com.google.android.exoplayer:extension-leanback:$ExoPlayerVersion"
-    implementation "com.google.android.exoplayer:exoplayer-core:$ExoPlayerVersion"
-    implementation "com.google.android.exoplayer:exoplayer-dash:$ExoPlayerVersion"
-    implementation "com.google.android.exoplayer:exoplayer-ui:$ExoPlayerVersion"
+    implementation "com.google.android.exoplayer:exoplayer:$rootProject.ExoPlayerVersion"
+    implementation "com.google.android.exoplayer:extension-leanback:$rootProject.LeanbackExoPlayerVersion"
+    implementation "com.google.android.exoplayer:exoplayer-core:$rootProject.ExoPlayerVersion"
+    implementation "com.google.android.exoplayer:exoplayer-dash:$rootProject.ExoPlayerVersion"
+    implementation "com.google.android.exoplayer:exoplayer-ui:$rootProject.ExoPlayerVersion"
+    //RxJava
+    implementation "io.reactivex.rxjava3:rxandroid:$rootProject.RxJavaVersion"
+    implementation "io.reactivex.rxjava3:rxjava:$rootProject.RxJavaVersion"
 }

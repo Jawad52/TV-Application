@@ -24,6 +24,7 @@ class App : Application(), HasActivityInjector {
 
     override fun onCreate() {
         super.onCreate()
+        app = WeakReference(this)
         DaggerAppComponent.builder().application(this).build().inject(this)
     }
 

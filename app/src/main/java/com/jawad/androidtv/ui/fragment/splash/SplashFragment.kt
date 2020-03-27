@@ -1,4 +1,4 @@
-package com.jawad.androidtv.ui.fragment
+package com.jawad.androidtv.ui.fragment.splash
 
 import android.os.Handler
 import androidx.fragment.app.Fragment

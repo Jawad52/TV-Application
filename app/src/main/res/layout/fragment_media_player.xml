@@ -1,14 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     tools:context=".ui.fragment.player.MediaPlayerFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <include
+        android:id="@+id/ic_menu"
+        layout="@layout/view_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+        android:id="@+id/player_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/textBlack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ic_menu"
+        app:use_controller="true" />
+
+    <TextView
+        android:id="@+id/tv_error_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:focusable="false"
+        android:gravity="center"
+        android:maxLines="5"
+        android:padding="@dimen/_2sdp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_10sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/player_view"
+        app:layout_constraintEnd_toEndOf="@+id/player_view"
+        app:layout_constraintStart_toStartOf="@+id/player_view"
+        app:layout_constraintTop_toTopOf="@+id/player_view" />
+
+    <ProgressBar
+        android:id="@+id/pb_player"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_gravity="center"
+        android:focusable="false"
+        android:indeterminate="true"
+        android:indeterminateTint="@android:color/white"
+        android:indeterminateTintMode="src_in"
+        app:layout_constraintBottom_toBottomOf="@+id/player_view"
+        app:layout_constraintEnd_toEndOf="@+id/player_view"
+        app:layout_constraintStart_toStartOf="@+id/player_view"
+        app:layout_constraintTop_toTopOf="@+id/player_view" />
+
+    <include
+        android:id="@+id/in_overlay"
+        layout="@layout/view_overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/player_view"
+        app:layout_constraintEnd_toEndOf="@+id/player_view"
+        app:layout_constraintStart_toStartOf="@+id/player_view"
+        app:layout_constraintTop_toTopOf="@+id/player_view" />
+</androidx.constraintlayout.widget.ConstraintLayout>

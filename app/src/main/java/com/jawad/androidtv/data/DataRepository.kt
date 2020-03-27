@@ -1,5 +1,14 @@
 package com.jawad.androidtv.data
 
+import androidx.lifecycle.MutableLiveData
+import com.jawad.androidtv.data.remote.dataSource.RemoteDataSource
+import com.jawad.androidtv.data.remote.dto.Data
+import com.jawad.androidtv.data.remote.Result
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
@@ -10,7 +19,30 @@ import javax.inject.Singleton
  * @version 1.0
  * @since 25 Mar 2020
  */
-@Singleton
-class DataRepository {
 
+@Singleton
+class DataRepository @Inject constructor(private val remoteDataSource: RemoteDataSource) {
+
+    fun getHomeDataList(scope: CoroutineScope): MutableLiveData<Result<Data>> {
+        val result = MutableLiveData<Result<Data>>()
+        result.value = Result.loading()
+        scope.launch(Dispatchers.IO) {
+            val response = remoteDataSource.fetchNews()
+            try {
+                withContext(Dispatchers.Main) {
+                    if (response.status == Result.Status.SUCCESS) {
+                        val postListResponse = response.data!!.lineups
+                        result.value = Result.success(postListResponse.data)
+                    } else if (response.status == Result.Status.ERROR) {
+                        result.value = Result.error(response.message!!)
+                    }
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    result.value = Result.error("Unable to get data")
+                }
+            }
+        }
+        return result
+    }
 }

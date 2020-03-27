@@ -3,10 +3,15 @@
     <color name="colorPrimary">#6200EE</color>
 
     <color name="midnightExpress">#23272f</color>
+    <color name="transparentWhite">#20FFFFFF</color>
     <color name="greyChateau">#95989d</color>
-
-    <color name="white">#FFFFFF</color>
-
-    <color name="textBlack">#E0000000</color>
     <color name="textGray">#c1c1c1</color>
+
+    <color name="ebony">#2E3034</color>
+    <color name="balticSea">#3C4043</color>
+    <color name="blackRussian">#202124</color>
+    <color name="textBlack">#E0000000</color>
+
+    <color name="lightYellow">#f8bb07</color>
+    <color name="lightOrange">#e05b49</color>
 </resources>

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.jawad.androidtv.ui.fragment.SplashFragment"
+        android:name="com.jawad.androidtv.ui.fragment.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash">
         <action

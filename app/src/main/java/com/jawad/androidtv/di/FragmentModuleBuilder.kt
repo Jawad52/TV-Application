@@ -1,7 +1,7 @@
 package com.jawad.androidtv.di
 
 import com.jawad.androidtv.ui.fragment.player.MediaPlayerFragment
-import com.jawad.androidtv.ui.fragment.SplashFragment
+import com.jawad.androidtv.ui.fragment.splash.SplashFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

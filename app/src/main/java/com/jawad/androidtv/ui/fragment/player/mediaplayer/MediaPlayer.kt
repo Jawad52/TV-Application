@@ -37,10 +37,6 @@ class MediaPlayer : Player.EventListener {
     private var playbackPosition: Long = 0
     private var playerListener: PlayerListener? = null
 
-    private var playerHandler: Handler? = null
-    /*Events logs from player*/
-    private var eventLogger: EventLogger? = null
-
     /**
      * Media player instance to Player view
      */
@@ -58,14 +54,8 @@ class MediaPlayer : Player.EventListener {
      * Initiate the media player
      */
     private fun initializePlayer() {
-        val videoTrackSelectionFactory: TrackSelection.Factory =
-            AdaptiveTrackSelection.Factory(BANDWIDTH_METER)
-        val trackSelector: MappingTrackSelector = DefaultTrackSelector(videoTrackSelectionFactory)
-        playerHandler = Handler()
-        eventLogger = EventLogger(trackSelector)
-
         player = ExoPlayerFactory.newSimpleInstance(
-            DefaultRenderersFactory(App.getInstance()),
+            App.getInstance(),
             DefaultTrackSelector(), DefaultLoadControl()
         )
         player?.let {
@@ -86,7 +76,7 @@ class MediaPlayer : Player.EventListener {
     private fun buildMediaSource(url: String): MediaSource {
         val mediaUri: Uri = Uri.parse(url)
         return HlsMediaSource.Factory(buildDataSourceFactory(BANDWIDTH_METER))
-            .createMediaSource(mediaUri, playerHandler, eventLogger)
+            .createMediaSource(mediaUri)
     }
 
     /**
@@ -156,7 +146,7 @@ class MediaPlayer : Player.EventListener {
     override fun onPlayerError(error: ExoPlaybackException?) {
         val message = when (error!!.type) {
             ExoPlaybackException.TYPE_SOURCE -> {
-                "TYPE SOURCE ${error.sourceException.message}"
+                "Data loading from a MediaSource"
             }
             ExoPlaybackException.TYPE_RENDERER -> {
                 "TYPE RENDERER ${error.rendererException.message}"
@@ -178,12 +168,9 @@ class MediaPlayer : Player.EventListener {
      * @param playbackState is the play status
      */
     override fun onPlayerStateChanged(playWhenReadyStatus: Boolean, playbackState: Int) {
+        playerListener?.onPlayerStateChanged(playbackState)
         when (playbackState) {
-            Player.STATE_BUFFERING -> {
-                playerListener?.progressBarVisibility(View.VISIBLE)
-            }
             Player.STATE_READY -> {
-                playerListener?.progressBarVisibility(View.GONE)
                 playerListener?.onPlayerError("")
             }
             Player.STATE_ENDED -> {

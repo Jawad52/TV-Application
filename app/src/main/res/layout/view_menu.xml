@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blackRussian"
+    android:padding="@dimen/_6sdp">
+
+    <TextView
+        android:id="@+id/tv_exit"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/gilroy_medium"
+        android:gravity="center"
+        android:nextFocusLeft="@+id/tv_exit"
+        android:nextFocusRight="@+id/tv_menu"
+        android:nextFocusUp="@+id/tv_exit"
+        android:nextFocusDown="@+id/tv_exit"
+        android:padding="@dimen/_6sdp"
+        android:text="@string/exit"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_menu"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/gilroy_medium"
+        android:gravity="center"
+        android:nextFocusLeft="@+id/tv_exit"
+        android:nextFocusRight="@+id/tv_menu"
+        android:nextFocusUp="@+id/tv_menu"
+        android:nextFocusDown="@+id/tv_menu"
+        android:padding="@dimen/_6sdp"
+        android:text="@string/menu"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <requestFocus />
+    </TextView>
+</androidx.constraintlayout.widget.ConstraintLayout>

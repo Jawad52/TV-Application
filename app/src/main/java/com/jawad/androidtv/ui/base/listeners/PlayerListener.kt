@@ -11,5 +11,5 @@ package com.jawad.androidtv.ui.base.listeners
 
 interface PlayerListener {
     fun onPlayerError(message: String)
-    fun progressBarVisibility(visibility: Int)
+    fun onPlayerStateChanged(playbackState: Int)
 }

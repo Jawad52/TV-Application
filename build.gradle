@@ -24,7 +24,9 @@ buildscript {
         androidDagger = '2.23.2'
         daggerCompiler = '2.25.2'
         multidex = '2.0.1'
-        ExoPlayerVersion = '2.7.3'
+        LeanbackExoPlayerVersion = '2.7.3'
+        ExoPlayerVersion = '2.10.0'
+        RxJavaVersion = '3.0.0'
         /*ANKO*/
         ankoVersion = '0.10.8'
         /*sdp*/
@@ -53,6 +55,7 @@ allprojects {
         mavenCentral()
         maven { url "https://jitpack.io" }
         maven { url "https://maven.google.com" }
+        maven { url "https://oss.jfrog.org/libs-snapshot" }
     }
 }
 

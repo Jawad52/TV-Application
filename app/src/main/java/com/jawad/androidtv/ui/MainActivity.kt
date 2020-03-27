@@ -1,5 +1,6 @@
 package com.jawad.androidtv.ui
 
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import com.jawad.androidtv.R
 import com.jawad.androidtv.ui.base.BaseActivity
@@ -19,5 +20,10 @@ class MainActivity : BaseActivity(), HasSupportFragmentInjector {
 
     override fun initializeViewModel() {
         //"Implemented for new update"
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        RxBus.publish(keyCode)
+        return super.onKeyDown(keyCode, event)
     }
 }

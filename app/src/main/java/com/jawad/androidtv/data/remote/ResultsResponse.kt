@@ -18,7 +18,7 @@ data class ResultsResponse<T>(
 
 data class Lineups<T>(
     @SerializedName("Success")
-    val success: Int,
+    val success: Boolean,
     @SerializedName("Data")
-    val data: List<T>
+    val data: T
 )
