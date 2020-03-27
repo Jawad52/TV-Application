@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import com.jawad.androidtv.R
 import com.jawad.androidtv.ui.base.BaseFragment
 import com.jawad.androidtv.util.Constants
+import com.mindvalley.channels.util.EspressoIdlingResource
 
 /**
  * A simple [Fragment] subclass.
@@ -21,6 +22,7 @@ class SplashFragment : BaseFragment() {
     }
 
     override fun initializePresenter(view: View) {
+        EspressoIdlingResource.increment()
         navigateToHomeScreen(view)
     }
 

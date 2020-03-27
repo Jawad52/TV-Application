@@ -20,6 +20,8 @@ android {
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArguments clearPackageData: 'true'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -47,11 +49,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //kotlin
+    //kotlin and leanback
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"
     implementation "androidx.core:core-ktx:$rootProject.kotlinxCoreVersion"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$rootProject.kotlinVersion"
-
     implementation "androidx.leanback:leanback:$rootProject.leanbackVersion"
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
@@ -104,4 +105,32 @@ dependencies {
     //RxJava
     implementation "io.reactivex.rxjava3:rxandroid:$rootProject.RxJavaVersion"
     implementation "io.reactivex.rxjava3:rxjava:$rootProject.RxJavaVersion"
+
+    /**-------------------testing libs------------------------------------------**/
+    //UI Testing , AndroidJUnitRunner and JUnit Rules &Espresso dependencies
+    //junit 5
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+    testImplementation 'org.junit.platform:junit-platform-runner:1.5.2'
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.testExtJunit"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.testExtJunit"
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "org.assertj:assertj-core:3.12.2"
+    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    testImplementation "org.mockito:mockito-inline:$rootProject.mockitoInlineVersion"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$rootProject.mockwebserverVersion"
+    implementation "androidx.test:rules:$rootProject.testRulesVersion"
+
+    implementation 'androidx.test.espresso:espresso-idling-resource:3.2.0'
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation "androidx.work:work-testing:$rootProject.workVersion"
+
+    implementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.2.1'
+    androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
+    /**-------------------------------------------------------------**/
 }

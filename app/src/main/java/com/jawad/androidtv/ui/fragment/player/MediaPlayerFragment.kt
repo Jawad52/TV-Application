@@ -21,6 +21,7 @@ import com.jawad.androidtv.ui.base.listeners.PlayerListener
 import com.jawad.androidtv.ui.fragment.player.adapter.PlayerAdapter
 import com.jawad.androidtv.ui.fragment.player.adapter.VerticalItemDecoration
 import com.jawad.androidtv.ui.fragment.player.mediaplayer.MediaPlayer
+import com.mindvalley.channels.util.EspressoIdlingResource
 import io.reactivex.rxjava3.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_media_player.view.*
 import kotlinx.android.synthetic.main.view_menu.view.*
@@ -63,14 +64,15 @@ class MediaPlayerFragment : BaseFragment(), PlayerListener {
         textView = view.tv_error_message
         progressBar = view.pb_player
         overlayView = view.in_overlay
-        view.tv_exit.setOnClickListener {
+        view.bt_exit.setOnClickListener {
             activity!!.finish()
         }
         overlayView.view_center.setOnClickListener {
             overlayView.visibility = View.GONE
-            view.tv_menu.requestFocus()
+            view.bt_menu.requestFocus()
         }
 
+        /*Sets the recycler view spacing between items*/
         overlayView.rv_home_team.setHasFixedSize(true)
         overlayView.rv_home_team.addItemDecoration(
             VerticalItemDecoration(resources.getDimension(R.dimen._10sdp).toInt(), true)
@@ -79,9 +81,11 @@ class MediaPlayerFragment : BaseFragment(), PlayerListener {
         overlayView.rv_away_team.addItemDecoration(
             VerticalItemDecoration(resources.getDimension(R.dimen._10sdp).toInt(), true)
         )
+        /*Key event listener from the remote device*/
         RxBus.listen(Int::class.java).subscribe {
             onKeyDown(it)
         }
+
         subscribeUi(view)
     }
 
@@ -120,7 +124,6 @@ class MediaPlayerFragment : BaseFragment(), PlayerListener {
                         val homeAdapter = PlayerAdapter()
                         view.in_overlay.rv_home_team.adapter = homeAdapter
                         homeAdapter.submitList(homeList?.sortedBy { homeItem -> homeItem?.jerseyNumber })
-
                     }
                     it.data.awayTeam!!.players.let { awayList ->
                         val awayAdapter = PlayerAdapter()
@@ -128,14 +131,16 @@ class MediaPlayerFragment : BaseFragment(), PlayerListener {
                         awayAdapter.submitList(awayList?.sortedBy { awayItem -> awayItem?.jerseyNumber })
                     }
                     /*Enabling on click for menu item*/
-                    view.tv_menu.setOnClickListener {
+                    view.bt_menu.setOnClickListener {
                         overlayView.visibility =
                             if (overlayView.visibility != View.VISIBLE) View.VISIBLE else View.GONE
                         view.in_overlay.rv_home_team.requestFocus()
                     }
+                    EspressoIdlingResource.decrement()
                 }
                 Result.Status.ERROR -> {
                     Toast.makeText(activity, it.message, Toast.LENGTH_LONG).show()
+                    EspressoIdlingResource.decrement()
                 }
             }
         })
@@ -160,7 +165,6 @@ class MediaPlayerFragment : BaseFragment(), PlayerListener {
         mediaPlayer.onStop()
         playerView.player = null
     }
-
 
     /**
      * Any data loading error will be displayed

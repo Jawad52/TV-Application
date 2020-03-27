@@ -175,9 +175,8 @@ class MediaPlayer : Player.EventListener {
             }
             Player.STATE_ENDED -> {
                 player?.let {
-                    it.seekTo(0)
-                    it.stop()
-                    currentWindow = it.currentWindowIndex
+                    currentWindow = 0
+                    playbackPosition = 0
                     playWhenReady = it.playWhenReady
                 }
             }
