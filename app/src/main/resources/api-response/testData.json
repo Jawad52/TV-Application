@@ -1,0 +1,455 @@
+{
+  "Lineups": {
+    "Success": true,
+    "Data": {
+      "HomeTeam": {
+        "Players": [
+          {
+            "Order": 0,
+            "StartInField": true,
+            "Role": "حارس مرمى",
+            "IsCaptain": false,
+            "JerseyNumber": "26",
+            "Id": 28491,
+            "Name": "علي الحبسي",
+            "XCoordinate": 500,
+            "YCoordinate": 120
+          },
+          {
+            "Order": 1,
+            "StartInField": true,
+            "Role": "مدافع",
+            "IsCaptain": false,
+            "JerseyNumber": "2",
+            "Id": 177389,
+            "Name": "محمد البريك",
+            "XCoordinate": 130,
+            "YCoordinate": 380
+          },
+          {
+            "Order": 2,
+            "StartInField": true,
+            "Role": "مدافع",
+            "IsCaptain": false,
+            "JerseyNumber": "12",
+            "Id": 109962,
+            "Name": "ياسر الشهراني",
+            "XCoordinate": 870,
+            "YCoordinate": 380
+          },
+          {
+            "Order": 3,
+            "StartInField": true,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "28",
+            "Id": 170031,
+            "Name": "محمد كانو",
+            "XCoordinate": 720,
+            "YCoordinate": 620
+          },
+          {
+            "Order": 4,
+            "StartInField": true,
+            "Role": "مدافع",
+            "IsCaptain": false,
+            "JerseyNumber": "33",
+            "Id": 83682,
+            "Name": "أسامة هوساوي",
+            "XCoordinate": 240,
+            "YCoordinate": 320
+          },
+          {
+            "Order": 5,
+            "StartInField": true,
+            "Role": "مدافع",
+            "IsCaptain": false,
+            "JerseyNumber": "5",
+            "Id": 215658,
+            "Name": "علي هادي آل بليهي",
+            "XCoordinate": 670,
+            "YCoordinate": 320
+          },
+          {
+            "Order": 6,
+            "StartInField": true,
+            "Role": "مهاجم",
+            "IsCaptain": false,
+            "JerseyNumber": "22",
+            "Id": 165890,
+            "Name": "E. Cerutti",
+            "XCoordinate": 120,
+            "YCoordinate": 560
+          },
+          {
+            "Order": 7,
+            "StartInField": true,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "6",
+            "Id": 109955,
+            "Name": "عبدالملك الخيبري",
+            "XCoordinate": 500,
+            "YCoordinate": 500
+          },
+          {
+            "Order": 8,
+            "StartInField": true,
+            "Role": "مهاجم",
+            "IsCaptain": false,
+            "JerseyNumber": "77",
+            "Id": 235504,
+            "Name": "عمر خريبين",
+            "XCoordinate": 500,
+            "YCoordinate": 860
+          },
+          {
+            "Order": 9,
+            "StartInField": true,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "16",
+            "Id": 177904,
+            "Name": "نيوكلاس ميليسي",
+            "XCoordinate": 280,
+            "YCoordinate": 620
+          },
+          {
+            "Order": 10,
+            "StartInField": true,
+            "Role": "مهاجم",
+            "IsCaptain": false,
+            "JerseyNumber": "27",
+            "Id": 210516,
+            "Name": "A. Bencharki",
+            "XCoordinate": 880,
+            "YCoordinate": 560
+          },
+          {
+            "Order": 11,
+            "StartInField": false,
+            "Role": "حارس مرمى",
+            "IsCaptain": false,
+            "JerseyNumber": "1",
+            "Id": 109733,
+            "Name": "عبد الله المعيوف",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 12,
+            "StartInField": false,
+            "Role": "مدافع",
+            "IsCaptain": false,
+            "JerseyNumber": "4",
+            "Id": 83684,
+            "Name": "عبدالله الزوري ",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 13,
+            "StartInField": false,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "10",
+            "Id": 13084,
+            "Name": "محمد الشلهوب",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 14,
+            "StartInField": false,
+            "Role": "مهاجم",
+            "IsCaptain": false,
+            "JerseyNumber": "11",
+            "Id": 149235,
+            "Name": "غلمين ريفاس",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 15,
+            "StartInField": false,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "14",
+            "Id": 431036,
+            "Name": "Muhammad Fallatah",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 16,
+            "StartInField": false,
+            "Role": "مهاجم",
+            "IsCaptain": false,
+            "JerseyNumber": "20",
+            "Id": 36578,
+            "Name": "ياسر سعيد القحطاني",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 17,
+            "StartInField": false,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "31",
+            "Id": 444709,
+            "Name": "Ahmed Al Fiqi",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 18,
+            "StartInField": false,
+            "Role": "مهاجم",
+            "IsCaptain": false,
+            "JerseyNumber": "44",
+            "Id": 109965,
+            "Name": "مختار فلاته",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 19,
+            "StartInField": false,
+            "Role": "مدافع",
+            "IsCaptain": false,
+            "JerseyNumber": "70",
+            "Id": 110072,
+            "Name": "محمد جحفلي",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          }
+        ]
+      },
+      "AwayTeam": {
+        "Players": [
+          {
+            "Order": 0,
+            "StartInField": true,
+            "Role": "حارس مرمى",
+            "IsCaptain": false,
+            "JerseyNumber": "12",
+            "Id": 106940,
+            "Name": "علي المزيدي",
+            "XCoordinate": 500,
+            "YCoordinate": 120
+          },
+          {
+            "Order": 1,
+            "StartInField": true,
+            "Role": "مدافع",
+            "IsCaptain": false,
+            "JerseyNumber": "88",
+            "Id": 109877,
+            "Name": "ماجد هزازي",
+            "XCoordinate": 130,
+            "YCoordinate": 380
+          },
+          {
+            "Order": 2,
+            "StartInField": true,
+            "Role": "مدافع",
+            "IsCaptain": false,
+            "JerseyNumber": "6",
+            "Id": 80299,
+            "Name": "محمد عبد الشافي",
+            "XCoordinate": 870,
+            "YCoordinate": 380
+          },
+          {
+            "Order": 3,
+            "StartInField": true,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "14",
+            "Id": 109876,
+            "Name": "محمد الفهيد",
+            "XCoordinate": 240,
+            "YCoordinate": 320
+          },
+          {
+            "Order": 4,
+            "StartInField": true,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "21",
+            "Id": 445400,
+            "Name": "Ali Al Hassan",
+            "XCoordinate": 640,
+            "YCoordinate": 500
+          },
+          {
+            "Order": 5,
+            "StartInField": true,
+            "Role": "مدافع",
+            "IsCaptain": false,
+            "JerseyNumber": "2",
+            "Id": 109754,
+            "Name": "عبد الله مبارك الدوسري",
+            "XCoordinate": 670,
+            "YCoordinate": 320
+          },
+          {
+            "Order": 6,
+            "StartInField": true,
+            "Role": "مهاجم",
+            "IsCaptain": false,
+            "JerseyNumber": "26",
+            "Id": 111746,
+            "Name": "علي الزقعان",
+            "XCoordinate": 780,
+            "YCoordinate": 700
+          },
+          {
+            "Order": 7,
+            "StartInField": true,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "55",
+            "Id": 105734,
+            "Name": " ساندرو مانويل",
+            "XCoordinate": 360,
+            "YCoordinate": 500
+          },
+          {
+            "Order": 8,
+            "StartInField": true,
+            "Role": "مهاجم",
+            "IsCaptain": false,
+            "JerseyNumber": "90",
+            "Id": 222192,
+            "Name": "João Pedro",
+            "XCoordinate": 500,
+            "YCoordinate": 860
+          },
+          {
+            "Order": 9,
+            "StartInField": true,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "10",
+            "Id": 107968,
+            "Name": "ع. أوسلاتي",
+            "XCoordinate": 500,
+            "YCoordinate": 700
+          },
+          {
+            "Order": 10,
+            "StartInField": true,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "24",
+            "Id": 245492,
+            "Name": "إ. شنيحي",
+            "XCoordinate": 220,
+            "YCoordinate": 700
+          },
+          {
+            "Order": 11,
+            "StartInField": false,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "7",
+            "Id": 160068,
+            "Name": "أحمد الناظري",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 12,
+            "StartInField": false,
+            "Role": "مهاجم",
+            "IsCaptain": false,
+            "JerseyNumber": "9",
+            "Id": 180274,
+            "Name": "حمد الجهيم",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 13,
+            "StartInField": false,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "11",
+            "Id": 422690,
+            "Name": "S. Sakala",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 14,
+            "StartInField": false,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "13",
+            "Id": 197372,
+            "Name": "عبدالإله العمار",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 15,
+            "StartInField": false,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "17",
+            "Id": 214041,
+            "Name": "رياض شراحيلي",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 16,
+            "StartInField": false,
+            "Role": "حارس مرمى",
+            "IsCaptain": false,
+            "JerseyNumber": "22",
+            "Id": 109857,
+            "Name": "عبد الله العشير",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 17,
+            "StartInField": false,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "29",
+            "Id": 432813,
+            "Name": "Mohammed Al Majhad",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 18,
+            "StartInField": false,
+            "Role": "لاعب وسط",
+            "IsCaptain": false,
+            "JerseyNumber": "49",
+            "Id": 445645,
+            "Name": "Salem Al-Najrani",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          },
+          {
+            "Order": 19,
+            "StartInField": false,
+            "Role": "مدافع",
+            "IsCaptain": false,
+            "JerseyNumber": "80",
+            "Id": 432380,
+            "Name": "Abdullah Al Yousif",
+            "XCoordinate": 0,
+            "YCoordinate": 0
+          }
+        ]
+      }
+    }
+  }
+}

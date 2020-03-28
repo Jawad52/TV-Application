@@ -2,10 +2,10 @@ package com.jawad.androidtv.ui.fragment.player
 
 import android.view.KeyEvent
 import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.google.android.exoplayer2.Player
@@ -14,7 +14,6 @@ import com.jawad.androidtv.R
 import com.jawad.androidtv.data.remote.Result
 import com.jawad.androidtv.di.ViewModelFactory
 import com.jawad.androidtv.di.injectViewModel
-import com.jawad.androidtv.ui.MainActivity
 import com.jawad.androidtv.ui.RxBus
 import com.jawad.androidtv.ui.base.BaseFragment
 import com.jawad.androidtv.ui.base.listeners.PlayerListener
@@ -22,7 +21,6 @@ import com.jawad.androidtv.ui.fragment.player.adapter.PlayerAdapter
 import com.jawad.androidtv.ui.fragment.player.adapter.VerticalItemDecoration
 import com.jawad.androidtv.ui.fragment.player.mediaplayer.MediaPlayer
 import com.mindvalley.channels.util.EspressoIdlingResource
-import io.reactivex.rxjava3.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_media_player.view.*
 import kotlinx.android.synthetic.main.view_menu.view.*
 import kotlinx.android.synthetic.main.view_overlay.view.*
@@ -39,7 +37,8 @@ class MediaPlayerFragment : BaseFragment(), PlayerListener {
     private lateinit var mediaPlayerFragment: MediaPlayerViewModel
     private lateinit var playerView: PlayerView
     private lateinit var progressBar: ProgressBar
-    private lateinit var textView: TextView
+    private lateinit var messageTextView: TextView
+    private lateinit var menuButton: Button
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var overlayView: View
 
@@ -61,15 +60,18 @@ class MediaPlayerFragment : BaseFragment(), PlayerListener {
         mediaPlayer = MediaPlayer()
         mediaPlayer.setPlayerListener(this)
         playerView = view.player_view
-        textView = view.tv_error_message
+        messageTextView = view.tv_error_message
         progressBar = view.pb_player
         overlayView = view.in_overlay
-        view.bt_exit.setOnClickListener {
+        menuButton = view.ic_menu.bt_menu
+        /*menu button to perform set visibility of the overlay view*/
+        view.ic_menu.bt_exit.setOnClickListener {
             activity!!.finish()
         }
+        /*exit button to perform close application*/
         overlayView.view_center.setOnClickListener {
             overlayView.visibility = View.GONE
-            view.bt_menu.requestFocus()
+            menuButton.requestFocus()
         }
 
         /*Sets the recycler view spacing between items*/
@@ -103,7 +105,7 @@ class MediaPlayerFragment : BaseFragment(), PlayerListener {
                     activity?.finish()
             }
             KeyEvent.KEYCODE_MENU -> {
-                if (overlayView.visibility != View.VISIBLE) View.VISIBLE else View.GONE
+                menuButton.performClick()
             }
         }
     }
@@ -131,7 +133,7 @@ class MediaPlayerFragment : BaseFragment(), PlayerListener {
                         awayAdapter.submitList(awayList?.sortedBy { awayItem -> awayItem?.jerseyNumber })
                     }
                     /*Enabling on click for menu item*/
-                    view.bt_menu.setOnClickListener {
+                    menuButton.setOnClickListener {
                         overlayView.visibility =
                             if (overlayView.visibility != View.VISIBLE) View.VISIBLE else View.GONE
                         view.in_overlay.rv_home_team.requestFocus()
@@ -173,11 +175,11 @@ class MediaPlayerFragment : BaseFragment(), PlayerListener {
     override fun onPlayerError(message: String) {
         if (message.isNotEmpty()) {
             progressBar.visibility = View.GONE
-            textView.visibility = View.VISIBLE
-            textView.text = message
+            messageTextView.visibility = View.VISIBLE
+            messageTextView.text = message
         } else {
-            textView.visibility = View.GONE
-            textView.text = ""
+            messageTextView.visibility = View.GONE
+            messageTextView.text = ""
         }
     }
 

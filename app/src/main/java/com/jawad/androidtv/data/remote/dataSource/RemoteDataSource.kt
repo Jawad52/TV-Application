@@ -16,5 +16,5 @@ import javax.inject.Inject
  */
 class RemoteDataSource @Inject constructor(private val newsService: MediaService) :
     BaseDataSource() {
-    suspend fun fetchNews() = getResult { newsService.fetchMedia() }
+    suspend fun fetchData() = getResult { newsService.fetchRemoteData() }
 }

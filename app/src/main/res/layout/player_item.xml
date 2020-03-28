@@ -33,7 +33,7 @@
         android:focusable="false"
         android:fontFamily="@font/gilroy_medium"
         android:gravity="center"
-        android:maxLines="1"
+        android:maxLines="2"
         android:padding="@dimen/_6sdp"
         android:textColor="@android:color/white"
         android:textSize="@dimen/_8sdp"

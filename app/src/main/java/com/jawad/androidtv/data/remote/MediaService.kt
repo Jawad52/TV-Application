@@ -16,5 +16,5 @@ import retrofit2.http.GET
  */
 interface MediaService {
     @GET("sample.json")
-    suspend fun fetchMedia(): Response<ResultsResponse<Data>>
+    suspend fun fetchRemoteData(): Response<ResultsResponse<Data>>
 }

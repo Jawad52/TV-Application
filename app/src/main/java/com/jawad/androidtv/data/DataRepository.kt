@@ -18,16 +18,23 @@ import javax.inject.Singleton
  * @web www.jawadusman.com
  * @version 1.0
  * @since 25 Mar 2020
+ *
+ * Data Repository module for handling data operations.
  */
 
 @Singleton
 class DataRepository @Inject constructor(private val remoteDataSource: RemoteDataSource) {
 
-    fun getHomeDataList(scope: CoroutineScope): MutableLiveData<Result<Data>> {
+    /**
+     * API response handled in this function
+     * returned Data from the server
+     * @param scope to preform operation in background thread
+     */
+    fun getLineupsData(scope: CoroutineScope): MutableLiveData<Result<Data>> {
         val result = MutableLiveData<Result<Data>>()
         result.value = Result.loading()
         scope.launch(Dispatchers.IO) {
-            val response = remoteDataSource.fetchNews()
+            val response = remoteDataSource.fetchData()
             try {
                 withContext(Dispatchers.Main) {
                     if (response.status == Result.Status.SUCCESS) {

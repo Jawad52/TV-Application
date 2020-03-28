@@ -21,10 +21,16 @@ class MediaPlayerViewModel @Inject constructor(
     private var repository: DataRepository
 ) : BaseViewModel() {
 
+    /**
+     * Get Lineups data from data repository
+     */
     val homeData by lazy {
-        repository.getHomeDataList(coroutineScrope)
+        repository.getLineupsData(coroutineScrope)
     }
 
+    /**
+     * Cancel all coroutines when the ViewModel is cleared.
+     */
     override fun onCleared() {
         super.onCleared()
         coroutineScrope.cancel()
