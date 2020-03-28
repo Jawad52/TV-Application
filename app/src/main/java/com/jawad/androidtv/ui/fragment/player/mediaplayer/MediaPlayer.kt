@@ -70,7 +70,7 @@ class MediaPlayer : Player.EventListener {
 
     /**
      * Build Media Source
-     * @param uris the URL to play the content
+     * @param url the URL to play the content
      * @return MediaSource
      */
     private fun buildMediaSource(url: String): MediaSource {
