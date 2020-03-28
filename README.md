@@ -1,6 +1,6 @@
 # Android TV-App 
 
-Android TV-App is a sample project to showcases mediaplayer. This app consist of two screens: Splash, mediplayer screen.
+Android TV-App is a sample project to showcases mediaplayer. This app consist of two screens: Splash and mediplayer screen and used MVVM architecture in Android and Clean Architecture 
 
 Media Player class
 -------------------------
@@ -21,7 +21,8 @@ In the following code shows how create the matching MediaSoruce:
         val mediaUri: Uri = Uri.parse(url)
         return HlsMediaSource.Factory(buildDataSourceFactory(BANDWIDTH_METER))
             .createMediaSource(mediaUri)
-    }	
+		
+	}
 
 	private fun buildDataSourceFactory(bandwidthMeter: DefaultBandwidthMeter?): DataSource.Factory? {
         return DefaultDataSourceFactory(
@@ -131,3 +132,11 @@ Test Library Used
 
 *  Espresso for UI test
 *  JUnit4 used to test classes
+
+Screenshots
+-----------
+
+![AndroidTVSplashScreen](screenshots/Screenshot_1.png "Splash Screen")
+![PlayerScreen](screenshots/Screenshot_2.png "Player Screen")
+![Menu](screenshots/Screenshot_3.png "Menu Item")
+
