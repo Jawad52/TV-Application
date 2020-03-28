@@ -1,6 +1,8 @@
 # Android TV-App 
 
-Android TV-App is a sample project to showcases mediaplayer. This app consist of two screens: Splash and mediplayer screen and used MVVM architecture in Android and Clean Architecture 
+Android TV-App is a sample project to showcases mediaplayer. This app consist of two screens: Splash and mediplayer screen and used MVVM architecture in Android and Clean Architecture.
+
+A Android TV-App is written completely in Kotlin. Used ExoPlayer as a mediaplayer.
 
 Media Player class
 -------------------------
@@ -27,14 +29,13 @@ In the following code shows how create the matching MediaSoruce:
 	private fun buildDataSourceFactory(bandwidthMeter: DefaultBandwidthMeter?): DataSource.Factory? {
         return DefaultDataSourceFactory(
             App.getInstance(), bandwidthMeter,
-            buildHttpDataSourceFactory(bandwidthMeter)
-        )
-    }
+            buildHttpDataSourceFactory(bandwidthMeter))
+	}
 	
 	private fun buildHttpDataSourceFactory(bandwidthMeter: DefaultBandwidthMeter?): HttpDataSource.Factory? {
         val userAgent = Util.getUserAgent(App.getInstance(), BuildConfig.APPLICATION_ID)
         return DefaultHttpDataSourceFactory(userAgent, bandwidthMeter)
-    }
+	}
 	
 ```
 
@@ -113,8 +114,6 @@ Libraries Used
 --------------
 
 *  Android Jetpack is used as an Architecture glue including ViewModel, LiveData, Lifecycles, and Navigation.
-
-*  A Android TV-App is written in Kotlin.
 
 *  ExoPlayer is an application level media player for Android, used for playing videos  
 
