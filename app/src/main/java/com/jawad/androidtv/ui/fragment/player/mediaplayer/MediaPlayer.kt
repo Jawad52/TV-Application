@@ -146,7 +146,7 @@ class MediaPlayer : Player.EventListener {
     override fun onPlayerError(error: ExoPlaybackException?) {
         val message = when (error!!.type) {
             ExoPlaybackException.TYPE_SOURCE -> {
-                "Data loading from a MediaSource"
+                "Error while data loading from a MediaSource"
             }
             ExoPlaybackException.TYPE_RENDERER -> {
                 "TYPE RENDERER ${error.rendererException.message}"

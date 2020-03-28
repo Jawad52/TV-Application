@@ -1,6 +1,8 @@
 package com.jawad.androidtv.data.remote
 
+import retrofit2.HttpException
 import retrofit2.Response
+import java.io.IOException
 
 /**
  * The class BaseDataSource
@@ -22,8 +24,18 @@ abstract class BaseDataSource {
                 if (body != null) return Result.success(body)
             }
             return error(" ${response.code()} ${response.message()}")
-        } catch (e: Exception) {
-            return error("No Internet Connection")
+        } catch (throwable: Throwable) {
+            return when (throwable) {
+                is IOException -> error("Network error")
+                is HttpException -> {
+                    val code = throwable.code()
+                    val errorResponse = throwable.message()
+                    error("$code  $errorResponse")
+                }
+                else -> {
+                    error("Unknown error")
+                }
+            }
         }
     }
 
